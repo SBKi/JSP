@@ -51,3 +51,40 @@ label {
 #addr_id {
 	/* display: none; */
 }
+
+	ul{
+		list-style: none;
+		padding-inline-start:0px;  /* 목록 들여쓰기 없애기 */
+	}
+	ul #name{
+		padding : 5px  20px;
+		margin : 5px 0px;
+		background-color: tomato;
+		color:white;
+	}
+	li {
+		padding : 5px  20px;
+	}
+		ul{
+		display:flex;
+		list-style: none;
+	}
+	ul #name{
+		padding : 5px  20px;
+		margin : 5px 0px;
+		background-color: tomato;
+		color:white;
+	}
+	ul #email{
+		width: 20vw;
+	}
+	ul #hobby{
+		width: 20vw;
+	}
+	li {
+		padding : 5px  20px;
+		margin : 5px 0px;
+		border: 1px solid gray;
+		border-radius: 3px;
+		width: 10vw;
+	}
