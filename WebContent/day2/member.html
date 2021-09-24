@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JSP1 프로젝트[6]-회원 등록 </title>
+<link rel="stylesheet" href="member.css">
+<script>
+	function validCheck() {
+		const frm = document.frmReg;
+		if (frm.password.value.length < 8){
+			alert('패스워드는 8글자 이상으로 하세요.');
+			frm.password.focus();				 
+			return false;						
+		}
+		if(frm.age.value < 20 || frm.age.value > 70 ){    
+			alert('나이는 20세 이상 70세 이하로만 가능합니다. ');
+			frm.age.focus();
+			return false;
+		}
+		
+		for(let i=0 ;i<frm.hobby.length;i++){
+			if(frm.hobby[i].checked){     
+				return true;
+			}
+		}
+
+		alert('취미를 1개라도 선택해 주세요.');
+		return false;
+	}
+</script>
+</head>
+<body>
+	<div style="width: 70%; margin: auto;">
+		<h3>회원 등록</h3>
+		<form action ="member_save.jsp" name="frmReg" onsubmit="return validCheck()" method="post"> 
+			<table style="width: 100%">
+				<tr>
+					<td><label>이름</label></td> 
+					<td><input type="text" name="name" placeholder="이름 이력(필수)"  required></td>
+				</tr>
+				<tr>
+					<td><label>패스워드</label></td>
+					<td><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<td><label>이메일</label></td>
+					<td><input type="email" name="email"></td>
+				</tr>
+				<tr>
+					<td><label>나이</label></td>
+					<td><input type="number" name="age" min="10" max="99"  
+						value="30"></td> 
+				</tr>
+				<tr>
+					<td><label>주소</label></td>
+					<td><select name="addr">
+							<!-- value 속성은 서버에 전달시킬 값 -->
+							<option value="서울">서울</option>
+							<option value="인천" selected>인천</option> 
+							<option value="대전">대전</option>
+							<option value="광주">광주</option>
+							<option value="부산">부산</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td><label>성별</label></td>
+					<td><input type="radio" value="male" name="gender">남자
+						<input type="radio" value="female" name="gender" checked>여자 
+					</td>
+				</tr>
+				<tr>
+					<td><label>취미</label></td>
+					<td>
+						<input type="checkbox" name="hobby" value="축구">축구
+						<input type="checkbox" name="hobby" value="농구" checked>농구
+						<input type="checkbox" name="hobby" value="스키">스키 
+						<input type="checkbox" name="hobby" value="달리기">달리기
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center">
+						<input 	type="submit" value="가입하기">   
+						<input type="reset"	value="다시쓰기">
+					</td>
+				</tr>	
+			</table>
+		</form>
+	</div>
+</body>
+</html>
