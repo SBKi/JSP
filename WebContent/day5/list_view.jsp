@@ -15,7 +15,7 @@
 <h3> 고객 리스트 WELCOME!!!</h3>
 <c:forEach var="cus" items="${list}">  
 <ul> 
-	<li><a>${cus.name}</a> 님</li>
+	<li id="name"><a href="update.jsp?idx=${cus.idx }">${cus.name }</a> 님</li>
 	<li id="email">${cus.email }</li>
 	<li>${cus.age} 세 (${cus.gender eq 'male' ? '남성' : '여성'} ) </li>
 	<li>${cus.addr }</li>

@@ -12,12 +12,13 @@
 <body>
 <h3>환영합니다. WELCOME!!!</h3>
 <ul>
-	<li id="name">${cus.name } 님</li>
+	<li id="name">${cus.name }님</li>
 	<li>${cus.email }</li>
 	<li>${cus.age} 세 (${cus.gender eq 'male' ? '남성' : '여성'} ) </li>
 	<li>지역 : ${cus.addr }</li>
 	<li>취미 : ${cus.hobby }</li>
 </ul>
 <a href="list.jsp">회원 리스트</a>
+<a href="update.jsp?idx=${idx }">정보수정</a>
 </body>
 </html>

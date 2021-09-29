@@ -23,9 +23,11 @@
 	
 	MybatisDao dao = MybatisDao.getInstance();
 	Customer cus = new Customer(0,name,"",email,addr,gender,age,hobbies);
-	dao.insert(cus);
+	int idx = dao.insert(cus); 
+	cus.setIdx(idx);
 	
 	request.setAttribute("cus", cus);
+	request.setAttribute("idx", idx);
 	pageContext.forward("registraion_view.jsp");
 	
 %>

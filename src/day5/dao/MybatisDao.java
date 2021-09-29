@@ -42,7 +42,7 @@ public class MybatisDao {
 		int a = mapper.insert("insert", cus);
 		mapper.commit();
 		mapper.close();
-		return a;
+		return cus.getIdx();
 	}
 
 	public int delete(int idx) {
